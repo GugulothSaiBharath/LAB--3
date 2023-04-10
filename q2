@@ -1,0 +1,16 @@
+import geopandas as gpd
+import matplotlib.pyplot as plt
+
+# Read in flight data
+flight_data = pd.read_csv("C:\Users\gugul\Downloads\DataVisualisation_Lab3-master\DataVisualisation_Lab3-master\Q2\Q2\Flightschedule.csv")
+
+# Convert flight data to GeoDataFrame
+geometry = [LineString([(row['origin_lon'], row['origin_lat']), (row['dest_lon'], row['dest_lat'])]) for idx, row in flight_data.iterrows()]
+crs = {'init': 'epsg:4326'}
+flights_gdf = gpd.GeoDataFrame(flight_data, crs=crs, geometry=geometry)
+
+# Plot the connection graph
+fig, ax = plt.subplots(figsize=(12, 8))
+flights_gdf.plot(ax=ax, color='blue', linewidth=1)
+ax.set_title('Go Air Domestic Flights in India', fontsize=16)
+plt.show()

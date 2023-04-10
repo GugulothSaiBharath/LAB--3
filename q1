@@ -2,7 +2,7 @@ import geopandas as gpd
 import matplotlib.pyplot as plt
 
 # Read in India shapefile
-india = gpd.read_file("C:\Users\gugul\Downloads\DataVisualisation_Lab3-master\DataVisualisation_Lab3-master\Q1\Q1\map_of_india_with_population.html")
+india = gpd.read_file("C:\Users\gugul\Downloads\India_Country_Boundary.shp")
 
 # Read in state capitals data
 capitals = gpd.read_file("C:\Users\gugul\Downloads\DataVisualisation_Lab3-master\DataVisualisation_Lab3-master\Q1\Q1\Population.csv")
